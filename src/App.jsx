@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
+import "./styles/global.scss";
 
 export function App() {
   return (
