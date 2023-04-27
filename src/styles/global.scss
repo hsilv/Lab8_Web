@@ -2,6 +2,8 @@
 
 $base-color: #dff386;
 $color: rgba(rgb(0, 0, 0), 0.88);
+$TurnsColor: rgb(55, 135, 160);
+$TurnsHoverColor: rgb(42, 119, 23);
 
 body {
   background-color: $base-color;
@@ -13,4 +15,36 @@ body {
   flex-direction: column;
   align-items: center;
   font-family: "Lato", sans-serif;
+}
+
+.table {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.turns {
+  background-color: $TurnsColor;
+  border-radius: 7px;
+  border: 0;
+  font-size: medium;
+  font-family: "Lato", sans-serif;
+  padding: 15px;
+  color: white;
+  width: fit-content;
+}
+
+.fade {
+  display: none;
+}
+
+.finished {
+  display: block;
 }
