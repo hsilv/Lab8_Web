@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./styles/global.scss";
 import { Button } from "./components/Button";
+import { Card } from "./components/Card";
 
 import img1 from "./img/1.png";
 import img2 from "./img/2.png";
@@ -29,11 +30,23 @@ const cardImg = [
 ];
 
 export function App() {
+  const [cards, setCards] = useState([]);
+  const [turns, setTurns] = useState(0);
+
+  const shuffleCards = () => {
+    const shuffledCards = [...cardImg, ...cardImg]
+      .sort(() => Math.random() - 0.5)
+      .map((card) => ({ ...card, id: Math.random() }));
+
+    setCards(shuffledCards);
+    setTurns(0);
+  };
+
   return (
     <div>
       <div className="gameHeader">
         <h1>Juego de Memoria</h1>
-        <Button title="Iniciar partida"></Button>
+        <Button title="Iniciar partida" onClick={shuffleCards}></Button>
       </div>
     </div>
   );
